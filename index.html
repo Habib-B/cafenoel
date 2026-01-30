@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cafe Noël – Coming Soon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --brown-dark: #44230e;
+  --brown-light: #a97736;
+  --gold: #d6992d;
+  --border: #e6d3a3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND SLIDES ===== */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 30s infinite;
+}
+
+.bg-slide:nth-child(1) { background-image: url("images/hero1.jpg"); animation-delay: 0s; }
+.bg-slide:nth-child(2) { background-image: url("images/hero2.jpg"); animation-delay: 6s; }
+.bg-slide:nth-child(3) { background-image: url("images/hero3.jpg"); animation-delay: 12s; }
+.bg-slide:nth-child(4) { background-image: url("images/hero4.jpg"); animation-delay: 18s; }
+.bg-slide:nth-child(5) { background-image: url("images/hero5.jpg"); animation-delay: 24s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
+
+/* ===== CONTENT ===== */
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.95);
+  border: 1.5px solid var(--border);
+  padding: 80px 60px;
+  max-width: 820px;
+  width: 100%;
+  text-align: center;
+}
+
+/* LOGO */
+.logo {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+}
+
+.title {
+  font-size: 64px;
+  letter-spacing: 5px;
+  font-weight: 500;
+  color: var(--brown-dark);
+  margin-bottom: 30px;
+}
+
+.divider {
+  width: 90px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 40px;
+}
+
+.subtitle {
+  color: var(--brown-light);
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.action-btn {
+  padding: 16px 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--brown-dark);
+  font-size: 15px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.action-btn:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* Instagram */
+.instagram {
+  display: inline-flex;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.instagram img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+/* Signature */
+.signature {
+  margin-top: 14px;              /* closer to Instagram */
+  font-family: "Dancing Script", cursive;
+  font-size: 14px;               /* smaller, more luxury */
+  color: var(--brown-light);
+  opacity: 0.7;
+  display: block;                /* ensures it stays UNDER */
+  animation: wave 3s ease-in-out infinite;
+}
+
+/* Soft wave */
+@keyframes wave {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .card { padding: 60px 30px; }
+  .title { font-size: 42px; letter-spacing: 3px; }
+  .logo { width: 140px; height: 140px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="background">
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+</div>
+<div class="overlay"></div>
+
+<!-- CONTENT -->
+<section class="section">
+  <div class="card">
+
+    <img src="images/cafelogo.jpg" alt="Cafe Noel" class="logo">
+
+    <h1 class="title">COMING SOON...</h1>
+    <div class="divider"></div>
+
+    <p class="subtitle">The Legacy of Taste</p>
+
+    <div class="actions">
+      <a href="https://wa.me/96181829020" target="_blank" class="action-btn">
+        WhatsApp · Aley Branch
+      </a>
+      <a href="https://wa.me/96181084214" target="_blank" class="action-btn">
+        WhatsApp · Bkheshtay Branch
+      </a>
+    </div>
+
+    <a href="https://instagram.com/cafe.noel" target="_blank" class="instagram">
+      <img src="images/instagram.jpg" alt="Instagram">
+    </a>
+
+    <div class="signature">
+      by Habib Berjak &amp; Omar Aldanaf
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
